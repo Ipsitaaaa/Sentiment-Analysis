@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sentiment Analyzer</title>
+</head>
+<body>
+  <h1>Sentiment Analyzer</h1>
+  <input type="text" id="keywordInput">
+  <button onclick="getSentimentScore()">Get sentiment score</button>
+  <p id="result"></p>
+
+  <script>
+    function getSentimentScore() {
+      const keyword = document.getElementById('keywordInput').value;
+
+      fetch('http://127.0.0.1:8000/get_score', {
+        method: 'POST', // or 'GET' depending on your server setup
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ keyword: keyword}),
+      })
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('result').innerHTML = `The sentiment score for ${keyword} is ${data.data}`;
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    }
+  </script>
+</body>
+</html>

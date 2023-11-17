@@ -1,0 +1,41 @@
+/* Container styles */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Arial', sans-serif; /* Changing the font */
+  margin: 0;
+}
+
+/* Header styles */
+h1 {
+  font-size: 2.5em; /* Increasing header size */
+  margin-bottom: 20px; /* Adding some space below the header */
+}
+
+/* Input styles */
+input {
+  padding: 10px; /* Adding padding to the input */
+  font-family: 'Times New Roman', serif; /* Changing the font */
+  font-size: 1.2em; /* Increasing the font size */
+  margin-bottom: 20px;
+}
+
+/* Button styles */
+button {
+  padding: 12px 24px; /* Adding padding to the button */
+  font-weight: bold;
+  font-size: 1.1em; /* Increasing button font size */
+  background-color: #3498db; /* Changing button color */
+  color: white; /* Changing button text color */
+  border: none; /* Removing button border */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Adding a smooth transition */
+}
+
+button:hover {
+  background-color: #2980b9; /* Changing color on hover */
+}
+
